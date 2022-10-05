@@ -1,9 +1,9 @@
 package model;
 
 public interface IPriorityQueue<T> {
-    void insertElement(int priorityValue, Object element);
-    void extractMax(T element);
-    void increaseKey(T element);
-    void showElements(T element);
-    void showMaximum(T element);
+    void insertElement(int priorityValue, T element);
+    T extractMax();
+    void increaseKey(T element, int newPriorityValue);
+    String showElements(T element);
+    T showMaximum(T element);
 }

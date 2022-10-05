@@ -1,5 +1,6 @@
 package ui;
 import model.Heap;
+import model.IPriorityQueue;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,6 +12,7 @@ public class Main {
         heap.addElement(9, "Nelson");
         heap.addElement(11, "Patricia");
 
-        System.out.println(heap.print());;
+        System.out.println(heap.print());
+        IHuman juan = new Person();
     }
 }

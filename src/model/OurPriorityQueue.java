@@ -1,7 +1,5 @@
 package model;
 
-import java.util.ArrayList;
-
 public class OurPriorityQueue<T> implements IPriorityQueue {
     private Heap<T> heap;
 
@@ -16,21 +14,21 @@ public class OurPriorityQueue<T> implements IPriorityQueue {
 
     @Override
     public void extractMax(Object element) {
-
+        return;
     }
 
+    /*@Override
+    public void increaseKey(T element) {
+
+    }*/
+
+    /*@Override
+    public void showElements(T element) {
+
+    }*/
+
     @Override
-    public void increaseKey(Object element) {
-
-    }
-
-    @Override
-    public void showElements(Object element) {
-
-    }
-
-    @Override
-    public void showMaximum(Object element) {
-
+    public T showMaximum() {
+        return heap.getArr().get(0).getElement();
     }
 }
