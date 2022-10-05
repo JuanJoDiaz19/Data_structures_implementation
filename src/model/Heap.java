@@ -89,12 +89,14 @@ public class Heap<T> implements IPriorityQueue<T>{
             arr.set(index/2, temp2);
             index = index/2;
         }
-
     }
-
     @Override
-    public String showElements(T element) {
-        return null;
+    public String showElements() {
+        String ans = "";
+        for (int i = 1; i < arr.size() ; i++) {
+            ans+= arr.get(i).getPriorityValue() + " "+ arr.get(i).getElement() + "\n";
+        }
+        return ans;
     }
 
     @Override

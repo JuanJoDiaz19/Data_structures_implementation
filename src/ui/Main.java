@@ -13,6 +13,14 @@ public class Main {
         heap.addElement(11, "Patricia");
 
         System.out.println(heap.print());
-        IHuman juan = new Person();
+        IPriorityQueue<String> pq = new Heap<>();
+        pq.insertElement(5, "Juan");
+        pq.insertElement(10, "Federico");
+        pq.insertElement(4, "Alberto");
+        pq.insertElement(2, "Patricia");
+
+        System.out.println();
+        System.out.println(pq.showElements());;
+
     }
 }
