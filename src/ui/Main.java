@@ -1,6 +1,6 @@
 package ui;
-import model.Heap;
-import model.IPriorityQueue;
+import priorityQueueImplementation.Heap;
+import priorityQueueImplementation.IPriorityQueue;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,7 +19,16 @@ public class Main {
         pq.insertElement(4, "Alberto");
         pq.insertElement(2, "Patricia");
 
-        System.out.println();
+        //Tests informales xd :)
+        System.out.println("The top element is:");
+        System.out.println(pq.showMaximum());
+        System.out.println("Lets extract the maximun:");
+        System.out.println(pq.extractMax());
+        System.out.println("Lets extract the maximun:");
+        System.out.println(pq.extractMax());
+        System.out.println("Lets extract the maximun:");
+        System.out.println(pq.extractMax());
+        System.out.println("The elements in the list are:");
         System.out.println(pq.showElements());;
 
     }

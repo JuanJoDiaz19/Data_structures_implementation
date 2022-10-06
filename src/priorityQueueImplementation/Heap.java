@@ -1,4 +1,4 @@
-package model;
+package priorityQueueImplementation;
 
 import java.util.ArrayList;
 
@@ -100,7 +100,7 @@ public class Heap<T> implements IPriorityQueue<T>{
     }
 
     @Override
-    public T showMaximum(T element) {
-        return arr.get(0).getElement();
+    public T showMaximum() {
+        return arr.get(1).getElement();
     }
 }
