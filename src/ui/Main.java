@@ -1,10 +1,11 @@
 package ui;
+import hashTableImplementation.HashTable;
 import priorityQueueImplementation.Heap;
 import priorityQueueImplementation.IPriorityQueue;
 
 public class Main {
-    public static void main(String[] args) {
-        Heap<String> heap = new Heap<String>();
+    public static void main(String[] args) throws Exception {
+        /*Heap<String> heap = new Heap<String>();
         heap.addElement(5, "Juan");
         heap.addElement(1, "Francisco");
         heap.addElement(4, "Alberto");
@@ -29,7 +30,17 @@ public class Main {
         System.out.println("Lets extract the maximun:");
         System.out.println(pq.extractMax());
         System.out.println("The elements in the list are:");
-        System.out.println(pq.showElements());;
+        System.out.println(pq.showElements());*/
 
+
+        //Acontinuacion vamos a testear la Hash Table:
+
+        HashTable<String, String> mapa = new HashTable<>(1);
+        mapa.insert("123", "Juan Jose");
+        System.out.println(mapa.search("123"));
+        mapa.insert("122", "Patricia");
+        mapa.delete("123");
+        System.out.println(mapa.search("123"));
+        System.out.println(mapa.search("122"));
     }
 }

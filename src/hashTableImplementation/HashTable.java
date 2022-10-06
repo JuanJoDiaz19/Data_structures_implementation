@@ -26,7 +26,7 @@ public class HashTable<K,V>  implements IHashTable<K,V>{
         HashNode<K,V> nodeList = table[insertKey];
 
         if(nodeList == null) {
-            nodeList = new HashNode<>(key, value);
+            table[insertKey] = new HashNode<>(key, value);
         } else {
             while (nodeList != null) {
                 if(nodeList.getKey().equals(key)) {
@@ -65,6 +65,7 @@ public class HashTable<K,V>  implements IHashTable<K,V>{
                 prev.setNext(next);
                 next.setPrevious(prev);
             }
+            deleteNode = deleteNode.getNext();
         }
     }
 }
