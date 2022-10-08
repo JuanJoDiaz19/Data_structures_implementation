@@ -2,6 +2,7 @@ package ui;
 import hashTableImplementation.HashTable;
 import priorityQueueImplementation.Heap;
 import priorityQueueImplementation.IPriorityQueue;
+import priorityQueueImplementation.NodePriorityQueue;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -34,6 +35,23 @@ public class Main {
 
 
         //Acontinuacion vamos a testear la Hash Table:
+
+        Heap<String> heap=new Heap<>();
+
+
+        heap.getArr().add(new NodePriorityQueue<>(16, "Juan"));
+        heap.getArr().add(new NodePriorityQueue<>(4, "Francisco"));
+        heap.getArr().add(new NodePriorityQueue<>(10, "Alberto"));
+        heap.getArr().add(new NodePriorityQueue<>(14, "Javier"));
+        heap.getArr().add(new NodePriorityQueue<>(7, "Nelson"));
+        heap.getArr().add(new NodePriorityQueue<>(9, "Patricia"));
+        heap.getArr().add(new NodePriorityQueue<>(3, "Nelly"));
+        heap.getArr().add(new NodePriorityQueue<>(2, "Esteban"));
+        heap.getArr().add(new NodePriorityQueue<>(8, "Julio"));
+        heap.getArr().add(new NodePriorityQueue<>(1, "Andrew"));
+        System.out.println(heap.print());
+        heap.maxHeapify(2);
+        System.out.println(heap.print());
 
         HashTable<String, String> mapa = new HashTable<>(1);
         mapa.insert("123", "Juan Jose");

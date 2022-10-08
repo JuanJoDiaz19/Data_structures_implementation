@@ -3,20 +3,11 @@ package hashTableImplementation;
 public class HashTable<K,V>  implements IHashTable<K,V>{
     private int m;
     private HashNode<K,V>[] table;
-
-    //Constructor with the parameter m
     public HashTable(int m) {
         this.m = m;
         table = new HashNode[m];
     }
-
-    //Constructor without the parameter m
-     public HashTable() {
-        m = 997;
-        table = new HashNode[m];
-    }
-
-    public int hash(Object key) {
+    public int hash(K key) {
         return (Math.abs(key.hashCode())) % m;
     }
 
