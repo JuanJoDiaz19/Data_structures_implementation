@@ -50,14 +50,12 @@ public class HashTable<K,V>  implements IHashTable<K,V>{
     public void deleteKey(K key) {
         int deleteKey = hash(key);
         HashNode<K,V> deleteNode = table[deleteKey];
-        System.out.println(deleteNode.getKey()+"dsadsadsa");
         while (deleteNode != null){
             if(deleteNode.getKey().equals(key)){
                 HashNode<K,V> prev = deleteNode.getPrevious();
                 HashNode<K,V> next = deleteNode.getNext();
-                if(prev ==null && next==null){
-                    table[deleteKey]=new HashNode<>(null,null);
-                    System.out.println("aaaaa");
+                if(deleteNode.getKey().equals(key)){
+                    table[deleteKey]=next;
                 }else {
                     prev.setNext(next);
                     next.setPrevious(prev);

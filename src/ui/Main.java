@@ -12,6 +12,5 @@ public class Main {
         mapa.insert("122", "Patricia");
         mapa.deleteKey("122");
         System.out.println(mapa.search("123"));
-        System.out.println(mapa.search("122"));
-    }
+        System.out.println(mapa.search("122"));    }
 }

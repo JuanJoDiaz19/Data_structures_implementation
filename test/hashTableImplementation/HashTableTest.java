@@ -77,20 +77,33 @@ class HashTableTest {
 
     @Test
     public void deleteTest1() throws Exception {
-        setUp2();
+        setUp1();
         //Con colisiones
         table.insert("123", "Juan Jose");
         table.insert("456", "Patricia");
         table.deleteKey("456");
-        System.out.println(table.search("123"));
-        assertEquals(null,table.search("123"));
+        assertNull(table.search("456"));
         assertEquals("Juan Jose", table.search("123"));
     }
     @Test
     public void deleteTest2() throws Exception {
         setUp2();
+        //Con colisiones
         table.insert("123", "Juan Jose");
-        table.insert("122", "Patricia");
+        table.insert("456", "Patricia");
+        table.deleteKey("123");
+        assertNull(table.search("123"));
+        assertEquals("Patricia", table.search("456"));
+    }
+    @Test
+    public void deleteTest3() throws Exception {
+        setUp1();
+        //Con colisiones
+        table.insert("456", "Patricia");
+        table.insert("123", "Juan Jose");
+        table.deleteKey("123");
+        assertNull(table.search("123"));
+        assertEquals("Patricia", table.search("456"));
     }
 
 
