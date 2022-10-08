@@ -28,6 +28,7 @@ public class HashTable<K,V>  implements IHashTable<K,V>{
             }
             HashNode<K,V> finalNode = new HashNode<>(key, value);
             table[insertKey].setPrevious(finalNode);
+            finalNode.setNext(table[insertKey]);
             table[insertKey] = finalNode;
         }
     }
@@ -54,11 +55,11 @@ public class HashTable<K,V>  implements IHashTable<K,V>{
             if(deleteNode.getKey().equals(key)){
                 HashNode<K,V> prev = deleteNode.getPrevious();
                 HashNode<K,V> next = deleteNode.getNext();
-                if(deleteNode.getKey().equals(key)){
+                if(table[deleteKey].equals(deleteNode)){
                     table[deleteKey]=next;
                 }else {
-                    prev.setNext(next);
-                    next.setPrevious(prev);
+                    if(prev!= null) prev.setNext(next);
+                    if(next != null) next.setPrevious(prev);
                 }
             }
             deleteNode = deleteNode.getNext();

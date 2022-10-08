@@ -72,7 +72,7 @@ class HashTableTest {
     @Test
     public void searchTest3() throws Exception {
         setUp4();
-        assertEquals("Papa",table.search("124"));
+        assertEquals("Pepe",table.search("124"));
     }
 
     @Test
